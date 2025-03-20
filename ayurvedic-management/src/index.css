@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-herb-green: #5F8575;
+  --color-soft-green: #A4BE7B;
+  --color-leaf-green: #285238;
+  --color-earth-brown: #8B5A2B;
+  --color-sand: #E1C78F;
+  --color-terracotta: #D2691E;
+  --color-clay: #B87333;
+  --color-turmeric: #E3A857;
+  --color-lotus-pink: #F8C8DC;
+  --color-healing-blue: #5F9EA0;
+  --body-bg: #FBF9F3;
+  --header-spacing: clamp(1.5rem, 5vw, 3rem);
+  --section-spacing: clamp(2rem, 8vw, 5rem);
+  --transition-standard: all 0.3s ease;
+}
+
+/* Base styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--body-bg);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.3;
+  margin-bottom: 0.75em;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-herb-green text-white px-6 py-3 rounded-md hover:bg-leaf-green transition-all duration-300 font-medium text-center inline-block;
+  }
+  
+  .btn-secondary {
+    @apply bg-sand text-earth-brown px-6 py-3 rounded-md hover:bg-terracotta hover:text-white transition-all duration-300 font-medium text-center inline-block;
+  }
+  
+  .card {
+    @apply bg-white p-6 rounded-lg shadow-md border border-soft-green/20 flex flex-col h-full;
+  }
+  
+  .container-custom {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-12 md:py-20;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-herb-green to-leaf-green bg-clip-text text-transparent;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-herb-green focus:border-transparent;
+  }
+
+  .focus-within-ring {
+    @apply focus-within:ring-2 focus-within:ring-herb-green focus-within:border-transparent;
+  }
+  
+  .hero-text {
+    @apply max-w-prose mx-auto text-lg md:text-xl;
+  }
+}
+
+/* Custom utility classes */
+.text-balance {
+  text-wrap: balance;
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive breakpoints helper classes */
+.responsive-container {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    padding: 0 2rem;
+  }
+}

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 
 const services = [
@@ -7,46 +6,51 @@ const services = [
     title: 'Panchakarma Therapy',
     description: 'A comprehensive detoxification process that cleanses the body of toxins and restores balance to the doshas.',
     image: 'https://images.unsplash.com/photo-1537346439163-9067311755fb?q=80&w=1974&auto=format&fit=crop',
-    link: '/services/panchakarma'
+    link: '#'
   },
   {
     id: 2,
     title: 'Ayurvedic Consultation',
     description: 'Personalized assessment of your constitution (dosha) and health concerns with tailored recommendations.',
     image: 'https://images.unsplash.com/photo-1556760544-74068565f05c?q=80&w=2070&auto=format&fit=crop',
-    link: '/services/consultation'
+    link: '#'
   },
   {
     id: 3,
     title: 'Herbal Treatments',
     description: 'Natural remedies and herbal formulations prepared according to ancient Ayurvedic texts for various health conditions.',
     image: 'https://images.unsplash.com/photo-1471943311424-646960669fbc?q=80&w=2070&auto=format&fit=crop',
-    link: '/services/herbal-treatments'
+    link: '#'
   },
   {
     id: 4,
     title: 'Ayurvedic Massage',
     description: 'Therapeutic massage techniques using medicated oils to improve circulation, reduce stress, and promote relaxation.',
     image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop',
-    link: '/services/massage'
+    link: '#'
   },
   {
     id: 5,
     title: 'Yoga & Meditation',
     description: 'Guided practices to harmonize mind and body, reduce stress, and enhance overall well-being.',
     image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2022&auto=format&fit=crop',
-    link: '/services/yoga-meditation'
+    link: '#'
   },
   {
     id: 6,
     title: 'Dietary Counseling',
     description: 'Customized nutritional advice based on your dosha type and specific health needs.',
     image: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?q=80&w=1935&auto=format&fit=crop',
-    link: '/services/dietary-counseling'
+    link: '#'
   }
 ];
 
 const ServicesSection = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
   return (
     <section className="section bg-soft-green/10">
       <div className="container-custom">
@@ -77,20 +81,15 @@ const ServicesSection = () => {
               <p className="text-gray-600 mb-4">
                 {service.description}
               </p>
-              <Link 
-                to={service.link} 
-                className="inline-flex items-center text-leaf-green hover:text-herb-green font-medium"
+              <a 
+                href={service.link} 
+                onClick={handleClick}
+                className="inline-flex items-center text-leaf-green hover:text-herb-green font-medium cursor-pointer"
               >
                 Learn More <FaArrowRight className="ml-2 text-sm" />
-              </Link>
+              </a>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link to="/services" className="btn-primary">
-            View All Services
-          </Link>
         </div>
       </div>
     </section>

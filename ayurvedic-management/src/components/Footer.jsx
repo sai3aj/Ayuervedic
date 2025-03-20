@@ -16,7 +16,7 @@ const Footer = () => {
             <p className="mb-6">
               Embracing the ancient wisdom of Ayurveda to provide holistic health solutions for modern life.
             </p>
-            <div className="flex space-x-3">
+            {/* <div className="flex space-x-3">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-turmeric transition-colors duration-300" aria-label="Facebook">
                 <FaFacebookSquare size={24} />
               </a>
@@ -29,7 +29,7 @@ const Footer = () => {
               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-turmeric transition-colors duration-300" aria-label="Youtube">
                 <FaYoutubeSquare size={24} />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Useful Links */}
@@ -119,14 +119,6 @@ const Footer = () => {
         {/* Divider */}
         <div className="h-px bg-soft-green/20 my-8"></div>
 
-        {/* Copyright */}
-        <div className="text-center text-soft-green">
-          <p>© {currentYear} Ayurvedic Management. All rights reserved.</p>
-          <p className="mt-2 text-sm">
-            <Link to="/privacy" className="hover:text-turmeric transition-colors duration-300">Privacy Policy</Link> | 
-            <Link to="/terms" className="hover:text-turmeric transition-colors duration-300 ml-2">Terms of Service</Link>
-          </p>
-        </div>
       </div>
     </footer>
   );

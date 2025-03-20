@@ -157,7 +157,7 @@ const ServiceCard = ({ service }) => {
         <FaClock className="mr-2 text-herb-green" />
         <span>Duration: {service.duration}</span>
       </div>
-      <Link to={`/services/${service.id}`} className="btn-primary inline-block">
+      <Link to={`/#`} className="btn-primary inline-block">
         Learn More
       </Link>
     </div>

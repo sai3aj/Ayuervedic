@@ -31,7 +31,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center hover-scale">
             <span className="text-2xl font-heading font-bold text-gradient">
-              Ayurvedic Management
+              Ayurvedic Care
             </span>
           </Link>
 

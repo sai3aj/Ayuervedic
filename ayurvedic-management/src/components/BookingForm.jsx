@@ -174,7 +174,7 @@ const BookingForm = ({ selectedDoctor }) => {
             </p>
           </div>
           <p className="mb-6 text-gray-700 italic">
-            We've sent a confirmation email with all the details. Please arrive 15 minutes before your appointment.
+            Please arrive 15 minutes before your appointment.
           </p>
           <button
             onClick={() => setBookingStatus({ isSubmitting: false, isSubmitted: false, error: null })}

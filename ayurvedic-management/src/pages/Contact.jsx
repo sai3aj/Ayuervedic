@@ -82,14 +82,13 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="h-96 bg-gray-200">
-        {/* Replace with actual map integration */}
+      {/* <section className="h-96 bg-gray-200">
         <div className="w-full h-full flex items-center justify-center bg-soft-green/20">
           <p className="text-gray-600">
             Interactive map would be displayed here
           </p>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

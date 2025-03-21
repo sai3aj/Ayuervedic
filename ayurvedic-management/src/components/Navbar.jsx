@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaUser, FaUserPlus } from 'react-icons/fa';
+import { FaBars, FaTimes, FaUser, FaUserPlus, FaUserCog } from 'react-icons/fa';
 import { useSupabase } from '../contexts/SupabaseContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, signOut } = useSupabase();
+  const { user, signOut, isAdmin } = useSupabase();
   const location = useLocation();
 
   const toggleMenu = () => {
@@ -55,6 +55,14 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             {user ? (
               <>
+                {isAdmin && (
+                  <Link 
+                    to="/admin" 
+                    className="flex items-center text-gray-700 hover:text-herb-green transition-colors duration-300 px-3 py-2"
+                  >
+                    <FaUserCog className="mr-2" /> Admin
+                  </Link>
+                )}
                 <button 
                   onClick={handleLogout}
                   className="text-gray-700 hover:text-herb-green transition-colors duration-300 px-3 py-2"
@@ -126,6 +134,15 @@ const Navbar = () => {
               </Link>
               {user ? (
                 <>
+                  {isAdmin && (
+                    <Link
+                      to="/admin"
+                      className="text-gray-700 hover:text-herb-green transition-colors duration-300 flex items-center py-2"
+                      onClick={toggleMenu}
+                    >
+                      <FaUserCog className="mr-2" /> Admin
+                    </Link>
+                  )}
                   <button
                     onClick={() => {
                       handleLogout();
